@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIF Interaction</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Chunky font -->
 </head>
 <body>
     <div class="container">
+        <div class="text-overlay">
+            <div>Click Me</div>
+            <div class="arrow">↓</div>
+        </div>
         <img id="gif" src="https://i.gifer.com/origin/19/19b784c7216727910ec2b553092d3eff_w200.gif" alt="First GIF" class="gif">
-        <div class="text-overlay">Click Me <span class="arrow">↓</span></div>
         <div id="options" class="options" style="display: none;">
             <ul>
                 <li><a href="https://www.launchmynft.io/collections/5C2ijNMAbEn1YVwxALA4pimWHjtkDXSR5dxX17E4x9A6/VZhTpyCPnqjs6UgfOlcf" target="_blank">Buy NFT</a></li>
@@ -21,9 +25,11 @@
     <script>
         const gif = document.getElementById('gif');
         const options = document.getElementById('options');
+        const textOverlay = document.querySelector('.text-overlay');
 
         gif.addEventListener('click', () => {
             gif.style.display = 'none'; // Hide the first GIF
+            textOverlay.style.display = 'none'; // Hide the text overlay
             setTimeout(() => {
                 gif.src = 'https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif'; // Change to second GIF
                 gif.style.display = 'block'; // Show the second GIF
