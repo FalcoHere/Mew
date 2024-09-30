@@ -13,32 +13,30 @@
             <div>Click Me</div>
             <div class="arrow">↓</div>
         </div>
-        <img id="gif" src="https://example.com/your-gif.gif" alt="GIF" />
-        <button id="sellButton">Sell If You Wish</button>
+        <img id="gif" src="https://i.gifer.com/origin/19/19b784c7216727910ec2b553092d3eff_w200.gif" alt="First GIF" class="gif">
+        <div id="options" class="options" style="display: none;">
+            <ul>
+                <li><a href="https://www.launchmynft.io/collections/5C2ijNMAbEn1YVwxALA4pimWHjtkDXSR5dxX17E4x9A6/VZhTpyCPnqjs6UgfOlcf" target="_blank">Buy NFT</a></li>
+                <li>Buy Coin</li>
+                <li>Sell if you wish</li>
+            </ul>
+        </div>
     </div>
-
-    <div id="videoModal" class="modal">
-        <span class="close" id="closeModal">&times;</span>
-        <iframe id="videoEmbed" src="https://www.youtube.com/embed/wCsyEzrLINU" frameborder="0" allowfullscreen></iframe>
-    </div>
-
     <script>
-        const sellButton = document.getElementById('sellButton');
-        const videoModal = document.getElementById('videoModal');
-        const closeModal = document.getElementById('closeModal');
+        const gif = document.getElementById('gif');
+        const options = document.getElementById('options');
+        const textOverlay = document.querySelector('.text-overlay');
 
-        sellButton.addEventListener('click', () => {
-            videoModal.style.display = 'block';
-        });
-
-        closeModal.addEventListener('click', () => {
-            videoModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === videoModal) {
-                videoModal.style.display = 'none';
-            }
+        gif.addEventListener('click', () => {
+            gif.style.display = 'none'; // Hide the first GIF
+            textOverlay.style.display = 'none'; // Hide the text overlay
+            setTimeout(() => {
+                gif.src = 'https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif'; // Change to second GIF
+                gif.style.display = 'block'; // Show the second GIF
+                setTimeout(() => {
+                    options.style.display = 'block'; // Show options after 1 second
+                }, 1000);
+            }, 1000); // Delay for the vanish effect
         });
     </script>
 </body>
