@@ -19,7 +19,6 @@ body {
 }
 
 .text-overlay {
-    display: none; /* Adjust as needed */
     position: absolute;
     top: 10%; /* Adjust as needed */
     left: 50%;
