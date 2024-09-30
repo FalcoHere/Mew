@@ -3,12 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mew Mew</title> <!-- Updated title -->
+    <title>GIF Interaction</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #gifContainer {
+            position: relative;
+        }
+        #clickMe {
+            position: absolute;
+            top: 10px;
+            color: black;
+            font-size: 24px;
+            text-align: center;
+        }
+        #arrow {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: black;
+            font-size: 24px;
+        }
+        #options {
+            display: none;
+            margin-top: 20px;
+            list-style-type: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="gif-container">
-        <img src="https://i.gifer.com/origin/19/19b784c7216727910ec2b553092d3eff_w200.gif" alt="Mew Mew GIF" class="mew-gif">
-    </div>
+
+<div id="gifContainer">
+    <img id="gif" src="https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif" alt="GIF" style="width: 300px; height: auto; animation: loop 1s infinite;">
+    <div id="clickMe">Click Me</div>
+    <div id="arrow">↓</div>
+</div>
+<ul id="options">
+    <li><a href="https://www.launchmynft.io/collections/5C2ijNMAbEn1YVwxALA4pimWHjtkDXSR5dxX17E4x9A6/VZhTpyCPnqjs6UgfOlcf">Buy NFT</a></li>
+    <li>Buy Coin</li>
+    <li>Sell if you wish</li>
+</ul>
+
+<script>
+    const gif = document.getElementById('gif');
+    const options = document.getElementById('options');
+
+    gif.addEventListener('click', function() {
+        gif.style.display = 'none'; // Hide the current GIF
+        setTimeout(() => {
+            gif.src = 'https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif'; // Change to new GIF
+            gif.style.display = 'block'; // Show new GIF
+            setTimeout(() => {
+                options.style.display = 'block'; // Show options after 3 seconds
+            }, 3000);
+        }, 1000); // Delay for the vanish effect
+    });
+</script>
+
 </body>
 </html>
