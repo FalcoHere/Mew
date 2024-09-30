@@ -5,6 +5,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use the chunky font */
 }
 
 .container {
@@ -19,16 +20,18 @@ body {
 
 .text-overlay {
     position: absolute;
-    top: 10%;
+    top: 10%; /* Adjust as needed */
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 36px; /* Larger text */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
 }
 
 .arrow {
-    display: block;
-    font-size: 30px; /* Adjust size as needed */
+    font-size: 48px; /* Larger arrow */
+    margin-top: 10px; /* Space between text and arrow */
 }
 
 .options {
