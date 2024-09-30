@@ -1,58 +1,37 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Interaction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img id="gif" src="https://i.gifer.com/origin/19/19b784c7216727910ec2b553092d3eff_w200.gif" alt="First GIF" class="gif">
+        <div class="text-overlay">Click Me <span class="arrow">↓</span></div>
+        <div id="options" class="options" style="display: none;">
+            <ul>
+                <li><a href="https://www.launchmynft.io/collections/5C2ijNMAbEn1YVwxALA4pimWHjtkDXSR5dxX17E4x9A6/VZhTpyCPnqjs6UgfOlcf" target="_blank">Buy NFT</a></li>
+                <li>Buy Coin</li>
+                <li>Sell if you wish</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const gif = document.getElementById('gif');
+        const options = document.getElementById('options');
 
-.container {
-    position: relative;
-}
-
-.gif {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.text-overlay {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 24px; /* Adjust size as needed */
-}
-
-.arrow {
-    display: block;
-    font-size: 30px; /* Adjust size as needed */
-}
-
-.options {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.options ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.options li {
-    font-size: 20px; /* Larger text */
-    font-weight: bold; /* Bold text */
-}
-
-.gif-container {
-    animation: vanish 3s forwards; /* Animation for poof effect */
-}
-
-@keyframes vanish {
-    0% { opacity: 1; }
-    99% { opacity: 1; }
-    100% { opacity: 0; } /* Fade out effect */
-}
+        gif.addEventListener('click', () => {
+            gif.style.display = 'none'; // Hide the first GIF
+            setTimeout(() => {
+                gif.src = 'https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif'; // Change to second GIF
+                gif.style.display = 'block'; // Show the second GIF
+                setTimeout(() => {
+                    options.style.display = 'block'; // Show options after 1 second
+                }, 1000);
+            }, 1000); // Delay for the vanish effect
+        });
+    </script>
+</body>
+</html>
