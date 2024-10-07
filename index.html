@@ -23,6 +23,17 @@
         </div>
     </div>
 
+    <!-- New GIF Container -->
+    <div id="gif-container">
+        <img id="interactive-gif" src="https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif" alt="Interactive GIF" style="cursor: pointer;">
+    </div>
+
+    <!-- Popup for the PNG image -->
+    <div id="popup" style="display: none;">
+        <span id="close-popup" style="cursor: pointer;">&times;</span>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f0c4fb1f-b8b1-4bf3-9d6e-a765283ca1ca/d5imu6t-44ac7abe-48c4-406d-b257-601f0cd8e028.png" alt="Pokedex" style="width: 100%; height: auto;">
+    </div>
+
     <div id="videoModal" class="modal">
         <span class="close" id="closeModal">&times;</span>
         <iframe id="videoEmbed" src="https://www.youtube.com/embed/wCsyEzrLINU" frameborder="0" allowfullscreen></iframe>
@@ -35,6 +46,9 @@
         const sellButton = document.getElementById('sellButton');
         const videoModal = document.getElementById('videoModal');
         const closeModal = document.getElementById('closeModal');
+        const interactiveGif = document.getElementById('interactive-gif');
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('close-popup');
 
         gif.addEventListener('click', () => {
             gif.style.display = 'none'; // Hide the first GIF
@@ -59,6 +73,22 @@
         window.addEventListener('click', (event) => {
             if (event.target === videoModal) {
                 videoModal.style.display = 'none'; // Hide modal if clicked outside
+            }
+        });
+
+        // Interactive GIF click event
+        interactiveGif.addEventListener('click', () => {
+            popup.style.display = 'block'; // Show the popup
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none'; // Hide the popup
+        });
+
+        // Optional: Close popup when clicking outside of the image
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none'; // Hide modal if clicked outside
             }
         });
     </script>
