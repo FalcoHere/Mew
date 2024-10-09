@@ -65,18 +65,29 @@ body {
     font-family: 'Unown', cursive; /* Initial font is Pokémon font */
     color: black; /* Black text */
     text-decoration: none; /* Remove underline */
-    transition: color 0.3s, font-family 0.8s; /* Smooth transition for color and font change */
+    transition: color 0.3s; /* Smooth transition for color */
+    position: relative; /* For absolute positioning of the sand effect */
+    overflow: hidden; /* Hide overflow for the sand effect */
 }
 
 .link:hover {
-    font-family: 'Press Start 2P', cursive; /* Change to 8-bit font on hover */
-    color: black; /* Keep text black on hover */
-    animation: typing 1s steps(10) forwards; /* Typing effect */
+    animation: dissolve 1s forwards; /* Start the dissolve animation */
 }
 
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
+@keyframes dissolve {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0; /* Fade out */
+        transform: scale(1.2); /* Slightly scale up */
+    }
+    100% {
+        opacity: 1; /* Fade back in */
+        transform: scale(1); /* Scale back to original */
+        font-family: 'Press Start 2P', cursive; /* Change to 8-bit font */
+    }
 }
 
 .modal {
