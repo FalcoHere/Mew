@@ -46,7 +46,7 @@ body {
 
 .options {
     display: none;
-    margin-top: 40px; /* Move options lower */
+    margin-top: 80px; /* Increased margin to move options lower */
     text-align: center;
 }
 
