@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Unown';
+    src: url('fonts/Unown-OVEwA.ttf') format('truetype'); /* Path to your font file */
+}
+
+@font-face {
+    font-family: '8bit';
+    src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* 8-bit font */
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -48,6 +58,23 @@ body {
 .options li {
     font-size: 20px; /* Larger text */
     font-weight: bold; /* Bold text */
+}
+
+.link {
+    font-family: '8bit', cursive; /* 8-bit font */
+    color: black; /* Black text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.link:hover {
+    color: transparent; /* Make text transparent on hover */
+    animation: typing 1s steps(10) forwards; /* Typing effect */
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 .modal {
