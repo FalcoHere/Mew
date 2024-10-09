@@ -46,7 +46,7 @@ body {
 
 .options {
     display: none;
-    margin-top: 20px;
+    margin-top: 40px; /* Move options lower */
     text-align: center;
 }
 
@@ -58,13 +58,14 @@ body {
 .options li {
     font-size: 20px; /* Larger text */
     font-weight: bold; /* Bold text */
+    margin: 20px 0; /* Space between options */
 }
 
 .link {
     font-family: 'Press Start 2P', cursive; /* 8-bit font */
     color: black; /* Black text */
     text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Smooth transition for color change */
+    transition: color 0.3s, font-family 0.5s; /* Smooth transition for color and font change */
 }
 
 .link:hover {
