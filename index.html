@@ -35,29 +35,19 @@
         const sellButton = document.getElementById('sellButton');
         const videoModal = document.getElementById('videoModal');
         const closeModal = document.getElementById('closeModal');
-        const links = document.querySelectorAll('.link');
 
-        let isAnimating = false; // Flag to track animation state
-
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                if (!isAnimating) {
-                    isAnimating = true; // Set the flag to true
-                    link.classList.add('hover'); // Add a class to trigger the animation
-                }
-            });
-
-            link.addEventListener('animationend', () => {
-                isAnimating = false; // Reset the flag when the animation ends
-                link.classList.remove('hover'); // Remove the class to reset the state
-            });
-
-            link.addEventListener('mouseleave', () => {
-                if (!isAnimating) {
-                    isAnimating = true; // Set the flag to true
-                    link.classList.add('hover'); // Add a class to trigger the revert animation
-                }
-            });
+        gif.addEventListener('click', () => {
+            console.log("GIF clicked!"); // Debugging line
+            gif.style.display = 'none'; // Hide the first GIF
+            textOverlay.style.display = 'none'; // Hide the text overlay
+            setTimeout(() => {
+                gif.src = 'https://pa1.narvii.com/6342/fb158d36a3dc6ae0a2c20c25fb7a43603824f095_00.gif'; // Change to second GIF
+                gif.style.display = 'block'; // Show the second GIF
+                setTimeout(() => {
+                    options.style.display = 'block'; // Show options after 1 second
+                    console.log("Options displayed!"); // Debugging line
+                }, 1000);
+            }, 1000); // Delay for the vanish effect
         });
 
         sellButton.addEventListener('click', () => {
