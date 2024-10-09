@@ -61,14 +61,15 @@ body {
 }
 
 .link {
-    font-family: '8bit', cursive; /* 8-bit font */
+    font-family: 'Press Start 2P', cursive; /* 8-bit font */
     color: black; /* Black text */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
 .link:hover {
-    color: transparent; /* Make text transparent on hover */
+    font-family: 'Unown', cursive; /* Change to Pokémon font on hover */
+    color: black; /* Keep text black on hover */
     animation: typing 1s steps(10) forwards; /* Typing effect */
 }
 
